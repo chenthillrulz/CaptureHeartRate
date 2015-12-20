@@ -1,11 +1,13 @@
 package android.com.heartrate;
 
 import android.content.Context;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.Paint;
+import android.graphics.drawable.BitmapDrawable;
+import android.graphics.drawable.Drawable;
 import android.util.AttributeSet;
 import android.view.View;
 
@@ -16,6 +18,7 @@ import android.view.View;
  * @author Justin Wetherell <phishman3579@gmail.com>
  */
 public class HeartbeatView extends View {
+    private static final String TAG="HeartBeatView";
 
     private static final Matrix matrix = new Matrix();
     private static final Paint paint = new Paint(Paint.ANTI_ALIAS_FLAG);
@@ -26,18 +29,27 @@ public class HeartbeatView extends View {
     private static int parentWidth = 0;
     private static int parentHeight = 0;
 
+    // Hack
+    private Bitmap decodeResource(Resources res, int id) {
+        Drawable dr = getResources().getDrawable(id);
+        Bitmap bitmap = ((BitmapDrawable) dr).getBitmap();
+        // Scale it to 50 x 50
+        Drawable d = new BitmapDrawable(getResources(), Bitmap.createScaledBitmap(bitmap, 300, 300, true));
+        return ((BitmapDrawable) d).getBitmap();
+    }
+
     public HeartbeatView(Context context, AttributeSet attr) {
         super(context, attr);
 
-        greenBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.green_icon);
-        redBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.red_icon);
+        greenBitmap = decodeResource(getResources(), R.drawable.green_icon);
+        redBitmap = decodeResource(getResources(), R.drawable.red_icon);
     }
 
     public HeartbeatView(Context context) {
         super(context);
 
-        greenBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.green_icon);
-        redBitmap = BitmapFactory.decodeResource(getResources(), R.drawable.red_icon);
+        greenBitmap = decodeResource(getResources(), R.drawable.green_icon);
+        redBitmap = decodeResource(getResources(), R.drawable.red_icon);
     }
 
     /**

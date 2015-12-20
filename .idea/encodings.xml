@@ -6,9 +6,11 @@
     <file url="file://$PROJECT_DIR$/app/src/main/java/android/com/heartrate/HeartbeatView.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/java/android/com/heartrate/ImageProcessing.java" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/green_icon.png" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/green_icon.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/heart01.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/heart_background.jpg" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/heart_background_green.jpg" charset="windows-1252" />
+    <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/red_icon.png" charset="windows-1252" />
     <file url="file://$PROJECT_DIR$/app/src/main/res/drawable/red_icon.png" charset="windows-1252" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
